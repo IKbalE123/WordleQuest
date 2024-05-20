@@ -1,11 +1,11 @@
 //
 //  Shake.swift
-//  Wordle
+//  WordleQuest Watch Watch App
 //
-//  Created by Stewart Lynch on 2022-01-20.
+//  Created by ikbal erdal on 2024-01-18.
 //
-
 import SwiftUI
+
 
 struct Shake: GeometryEffect {
     var amount: CGFloat = 10
@@ -18,3 +18,6 @@ struct Shake: GeometryEffect {
             y: 0))
     }
 }
+
+
+

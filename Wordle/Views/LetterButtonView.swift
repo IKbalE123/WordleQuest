@@ -1,10 +1,9 @@
 //
 //  LetterButtonView.swift
-//  Wordle
+//  WordleQuest Watch Watch App
 //
-//  Created by Stewart Lynch on 2022-01-20.
+//  Created by ikbal erdal on 2024-01-18.
 //
-
 import SwiftUI
 
 struct LetterButtonView: View {
@@ -30,3 +29,5 @@ struct LetterButtonView_Previews: PreviewProvider {
             .environmentObject(WordleDataModel())
     }
 }
+
+

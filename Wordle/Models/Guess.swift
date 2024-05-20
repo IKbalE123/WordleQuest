@@ -1,10 +1,3 @@
-//
-//  Guess.swift
-//  Wordle
-//
-//  Created by Stewart Lynch on 2022-01-19.
-//
-
 import SwiftUI
 
 struct Guess {
@@ -16,9 +9,9 @@ struct Guess {
         word.map { String($0) }
     }
     
-    // 🟨🟩🟩🟩⬛
+    // 🟧🟩🟩🟩⬛
     var results: String {
-        let tryColors: [Color : String] = [.misplaced : "🟨", .correct : "🟩", .wrong : "⬛"]
+        let tryColors: [Color : String] = [.misplaced : "🟧", .correct : "🟩", .wrong : "⬛"]
         return bgColors.compactMap {tryColors[$0]}.joined(separator: "")
     }
 }

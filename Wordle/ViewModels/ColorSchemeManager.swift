@@ -1,10 +1,9 @@
 //
 //  ColorSchemeManager.swift
-//  Wordle
+//  WordleQuest Watch Watch App
 //
-//  Created by Stewart Lynch on 2022-01-23.
+//  Created by ikbal erdal on 2024-01-18.
 //
-
 import SwiftUI
 
 enum ColorScheme: Int {
@@ -22,3 +21,6 @@ class ColorSchemeManager: ObservableObject {
         UIWindow.key?.overrideUserInterfaceStyle = UIUserInterfaceStyle(rawValue: colorScheme.rawValue)!
     }
 }
+
+
+

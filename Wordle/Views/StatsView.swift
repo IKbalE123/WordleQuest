@@ -1,10 +1,9 @@
 //
 //  StatsView.swift
-//  Wordle
+//  WordleQuest Watch Watch App
 //
-//  Created by Stewart Lynch on 2022-01-22.
+//  Created by ikbal erdal on 2024-01-18.
 //
-
 import SwiftUI
 
 struct StatsView: View {
@@ -127,3 +126,6 @@ struct SingleStat: View {
         }
     }
 }
+
+
+

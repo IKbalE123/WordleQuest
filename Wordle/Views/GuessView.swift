@@ -1,10 +1,3 @@
-//
-//  GuessView.swift
-//  Wordle
-//
-//  Created by Stewart Lynch on 2022-01-19.
-//
-
 import SwiftUI
 
 struct GuessView: View {
@@ -35,3 +28,6 @@ struct GuessView_Previews: PreviewProvider {
         GuessView(guess: .constant(Guess(index: 0)))
     }
 }
+
+
+

@@ -1,9 +1,3 @@
-//
-//  UbiquitousStore.swift
-//  UbiquitousKeyValue Storage
-//
-//  Created by Stewart Lynch on 2021-10-25.
-//
 
 import Foundation
 

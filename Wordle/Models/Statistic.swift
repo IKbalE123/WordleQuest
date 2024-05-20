@@ -1,9 +1,4 @@
-//
-//  Statistic.swift
-//  Wordle
-//
-//  Created by Stewart Lynch on 2022-01-22.
-//
+
 
 import Foundation
 

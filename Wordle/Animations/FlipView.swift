@@ -1,10 +1,3 @@
-//
-//  FlipView.swift
-//  Wordle
-//
-//  Created by Stewart Lynch on 2022-01-21.
-//
-
 import SwiftUI
 
 struct FlipView<Front, Back>: View where Front: View, Back: View {

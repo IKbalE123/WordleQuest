@@ -1,32 +1,41 @@
 //
 //  Keyboard.swift
-//  Wordle
+//  WordleQuest Watch Watch App
 //
-//  Created by Stewart Lynch on 2022-01-20.
+//  Created by ikbal erdal on 2024-01-18.
 //
-
 import SwiftUI
 
 struct Keyboard: View {
     @EnvironmentObject var dm: WordleDataModel
-    var topRowArray = "QWERTYUIOP".map{ String($0) }
-    var secondRowArray = "ASDFGHJKL".map{ String($0) }
-    var thirdRowArray = "ZXCVBNM".map{ String($0) }
+    var topRowArray = "QWERTYUIOP".map { String($0) }
+    var secondRowArray = "ASDFGHJKL".map { String($0) }
+    var thirdRowArray = "ZXCVBNM".map { String($0) }
+
     var body: some View {
         VStack {
             HStack(spacing: 2) {
                 ForEach(topRowArray, id: \.self) { letter in
                     LetterButtonView(letter: letter)
+                        .onTapGesture {
+                            dm.addToCurrentWord(letter)
+                            if dm.isLimitedTimeModeOn {
+                                dm.shouldStartTimer = true // Start the timer when a letter is clicked
+                            }
+                        }
                 }
-                .disabled(dm.disabledKeys)
-                .opacity(dm.disabledKeys ? 0.6 : 1)
+
             }
             HStack(spacing: 2) {
                 ForEach(secondRowArray, id: \.self) { letter in
                     LetterButtonView(letter: letter)
+                        .onTapGesture {
+                            dm.addToCurrentWord(letter)
+                            if dm.isLimitedTimeModeOn {
+                                dm.startTimer()
+                            }
+                        }
                 }
-                .disabled(dm.disabledKeys)
-                .opacity(dm.disabledKeys ? 0.6 : 1)
             }
             HStack(spacing: 2) {
                 Button {
@@ -40,11 +49,17 @@ struct Keyboard: View {
                 .background(Color.unused)
                 .disabled(dm.currentWord.count < 5 || !dm.inPlay)
                 .opacity((dm.currentWord.count < 5 || !dm.inPlay) ? 0.6 : 1)
+                
                 ForEach(thirdRowArray, id: \.self) { letter in
                     LetterButtonView(letter: letter)
+                        .onTapGesture {
+                            dm.addToCurrentWord(letter)
+                            if dm.isLimitedTimeModeOn {
+                                dm.startTimer()
+                            }
+                        }
                 }
-                .disabled(dm.disabledKeys)
-                .opacity(dm.disabledKeys ? 0.6 : 1)
+                
                 Button {
                     dm.removeLetterFromCurrentWord()
                 } label: {
@@ -61,10 +76,5 @@ struct Keyboard: View {
     }
 }
 
-struct Keyboard_Previews: PreviewProvider {
-    static var previews: some View {
-        Keyboard()
-            .environmentObject(WordleDataModel())
-            .scaleEffect(Global.keyboardScale)
-    }
-}
+
+
