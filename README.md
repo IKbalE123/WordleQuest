@@ -1,4 +1,4 @@
-<h2>Wordle Quest</h2>
+<h2>Word Quest</h2>
 
 <h3>Overview</h3>
 
